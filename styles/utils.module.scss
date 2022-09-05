@@ -1,0 +1,99 @@
+$color-accent-1: #586994;
+$color-accent-2: #ced8f2;
+
+.fsSmall {
+  font-size: 1rem;
+}
+
+.fsMedium {
+  font-size: 1.125rem;
+}
+
+.fsLarge {
+  font-size: 1.25rem;
+}
+
+.fsXl {
+  font-size: 1.5rem;
+}
+
+.fsXxl {
+  font-size: 2rem;
+}
+
+.fw400 {
+  font-weight: 400;
+}
+
+.fw500 {
+  font-weight: 500;
+}
+.fw700 {
+  font-weight: 700;
+}
+
+.mt1 {
+  margin-top: 1rem;
+}
+
+.mt2 {
+  margin-top: 2rem;
+}
+
+.mt25 {
+  margin-top: 2.5rem;
+}
+
+.gap1 {
+  gap: 1rem;
+}
+
+.gap2 {
+  gap: 2rem;
+}
+.gap3 {
+  gap: 3rem;
+}
+
+.gap4 {
+  gap: 4rem;
+}
+
+.container {
+  max-width: 1024px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.colorAccent1 {
+  color: $color-accent-1;
+}
+
+.colorAccent2 {
+  color: $color-accent-2;
+}
+
+%flex {
+  display: flex;
+  gap: var(--gap, 1.5rem);
+  align-items: center;
+}
+
+.flexBetween {
+  @extend %flex;
+  justify-content: space-between;
+}
+.flexCenter {
+  @extend %flex;
+  align-items: center;
+}
+
+.placeContentCenter {
+  display: grid;
+  place-content: center;
+}
+
+.gridAutoColumns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}

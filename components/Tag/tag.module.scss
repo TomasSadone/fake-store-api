@@ -1,0 +1,10 @@
+@use "../../styles/utils.module.scss";
+.tag {
+  color: utils.$color-dark;
+  background-color: utils.$color-light;
+  // color: utils.$color-neutral-dark;
+  // background-color: utils.$color-neutral-light;
+  padding: 0.35em;
+  border-radius: 0.25em;
+  font-weight: 700;
+}

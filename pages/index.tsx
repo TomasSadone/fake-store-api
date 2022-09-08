@@ -1,7 +1,7 @@
 import type { NextPage, GetStaticProps } from "next";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
-import CategoryCard from "../components/CategoryCard/CategoryCard";
+import CategoryCard from "../components/Card/Card";
 import { setCategories } from "../lib/features/navbar/navbarSlice";
 import Utils from "../styles/utils.module.scss";
 
@@ -10,16 +10,19 @@ type Props = {
 };
 
 const Home: NextPage<Props> = ({ categories }) => {
-  const dispatch = useDispatch();
-  console.log(categories);
-  dispatch(setCategories(categories));
-
   return (
     <main className={`${Utils.container}`}>
       <h1 className={`${Utils.fontSizeXxl} ${Utils.fw700}`}>Categories:</h1>
       <div className={`${Utils.gridAutoColumns} ${Utils.gap1} ${Utils.mt25}`}>
         {categories.map((category) => {
-          return <CategoryCard key={category} category={category} />;
+          return (
+            <CategoryCard
+              type="category"
+              id={category}
+              key={category}
+              innerText={category}
+            />
+          );
         })}
       </div>
     </main>

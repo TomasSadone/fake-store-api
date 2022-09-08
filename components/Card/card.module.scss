@@ -1,0 +1,61 @@
+@use "../../styles/utils.module.scss";
+
+%cardStyle {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  padding: 0.5rem;
+
+  transition: all 0.3s ease-in-out;
+
+  display: grid;
+  position: relative;
+  a {
+    text-decoration: none;
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 7px 1px rgba(88, 105, 148, 0.75);
+    -webkit-box-shadow: 0px 0px 7px 1px rgba(88, 105, 148, 0.75);
+    -moz-box-shadow: 0px 0px 7px 1px rgba(88, 105, 148, 0.75);
+    scale: 1.02;
+  }
+}
+
+.categoryCard {
+  @extend %cardStyle;
+  aspect-ratio: 1;
+  background-color: utils.$color-medium;
+  color: utils.$color-light;
+  place-content: center;
+
+  &:hover {
+    background-color: utils.$color-light;
+    color: utils.$color-medium;
+    a {
+      color: utils.$color-medium;
+    }
+  }
+  a {
+    color: utils.$color-light;
+  }
+}
+
+.productCard {
+  @extend %cardStyle;
+
+  aspect-ratio: 1 / 1.5;
+  line-height: 1.1;
+  align-content: space-around;
+  a {
+    color: utils.$color-medium;
+    margin-bottom: 1rem;
+  }
+
+  @media (hover: none) {
+    box-shadow: 0px 0px 7px 1px rgba(88, 105, 148, 0.35);
+    -webkit-box-shadow: 0px 0px 7px 1px rgba(88, 105, 148, 0.35);
+    -moz-box-shadow: 0px 0px 7px 1px rgba(88, 105, 148, 0.35);
+  }
+}

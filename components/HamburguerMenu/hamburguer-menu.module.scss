@@ -9,7 +9,7 @@
   background-color: transparent;
   border: none;
   top: 2rem;
-  left: 0;
+  // left: 0;
   z-index: 9999;
 
   span {
@@ -22,7 +22,7 @@
   span::after {
     width: 1.7em;
     height: 3px;
-    background-color: utils.$color-accent-1;
+    background-color: utils.$color-medium;
 
     transition: transform 350ms ease-in-out, opacity 200ms linear;
   }

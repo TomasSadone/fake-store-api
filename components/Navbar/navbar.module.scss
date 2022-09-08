@@ -3,18 +3,21 @@
 /* -- BLOCK -- */
 .navbar {
   padding-top: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  padding-bottom: 1rem;
 
   position: sticky;
   top: -1px;
   z-index: 1000;
   background-color: white;
 
+  > * {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   a {
     text-decoration: none;
-    text-transform: uppercase;
   }
 
   @media (max-width: 44rem) {

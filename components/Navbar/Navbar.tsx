@@ -24,7 +24,7 @@ const Navbar: React.FC<Props> = ({ categories }) => {
   const hamburguerMenu = useRef<HTMLDivElement>(null);
   const nav = useRef<HTMLElement>(null);
   const cartButton = useRef<HTMLDivElement>(null);
-  const cartElement = useRef<HTMLElement>(null);
+  const cartElement = useRef<HTMLDivElement>(null);
 
   const router = useRouter();
 
@@ -34,6 +34,7 @@ const Navbar: React.FC<Props> = ({ categories }) => {
         !hamburguerMenu.current?.contains(event.target) &&
         !nav.current?.contains(event.target)
       ) {
+        console.log("hamburguer");
         setOpen(false);
       }
       if (
@@ -52,9 +53,7 @@ const Navbar: React.FC<Props> = ({ categories }) => {
   return (
     <header className={`${NavbarStyle.navbar} `}>
       <div className={`${Utils.container} ${NavbarStyle.relative}`}>
-        <div ref={hamburguerMenu}>
-          <HamburguerMenu setOpen={setOpen} open={open} />
-        </div>
+        <HamburguerMenu ref={hamburguerMenu} setOpen={setOpen} open={open} />
         <nav ref={nav}>
           <ul
             role="list"
@@ -84,7 +83,7 @@ const Navbar: React.FC<Props> = ({ categories }) => {
             width={28}
           />
         </div>
-        <Cart />
+        <Cart ref={cartElement} />
       </div>
     </header>
   );

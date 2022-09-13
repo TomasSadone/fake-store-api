@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { forwardRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../lib/app/store";
 import { CartProduct } from "../../lib/features/cart/cartSlice";
@@ -15,7 +15,7 @@ import {
 
 // type Props = {}
 
-const Cart: React.FC = () => {
+const Cart = forwardRef<HTMLDivElement>((props: any, ref) => {
   const store = useSelector((state: RootState) => state.cart);
   const { products, openOverlay } = store;
   const dispatch = useDispatch();
@@ -26,17 +26,17 @@ const Cart: React.FC = () => {
   };
   const add = (product: CartProduct) => dispatch(addItem(product));
 
-  const total = products.reduce((currentTotal: any, item: any) => {
-    return Number(item.price) * item.quantity + currentTotal;
-  }, 0);
+  let total = 0;
+  for (let i = 0; i < products.length; i++) {
+    total = total + products[i].quantity * Number(products[i].price);
+  }
   const roundTotal = () => Math.ceil(total * 100) / 100;
-
-  const totalPrice = () => {};
 
   return (
     <>
       {products.length === 0 ? (
         <div
+          ref={ref}
           className={`${CartStyle.cart} ${openOverlay && CartStyle.open} ${
             CartStyle.noProducts
           }`}
@@ -46,7 +46,10 @@ const Cart: React.FC = () => {
           </h1>
         </div>
       ) : (
-        <div className={`${CartStyle.cart}  ${openOverlay && CartStyle.open} `}>
+        <div
+          ref={ref}
+          className={`${CartStyle.cart}  ${openOverlay && CartStyle.open} `}
+        >
           {products.map((product) => {
             const { id, quantity, title, price, image } = product;
             return (
@@ -61,5 +64,8 @@ const Cart: React.FC = () => {
       )}
     </>
   );
-};
+});
+
+Cart.displayName = "Cart";
+
 export default Cart;

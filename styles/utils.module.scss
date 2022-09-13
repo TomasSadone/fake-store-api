@@ -121,7 +121,10 @@ $color-neutral-dark: #595959;
 
 .gridAutoColumns {
   @extend %grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(var(--minWidth, 240px), 1fr));
+}
+.gridAutoColumnsItemLarge {
+  --minWidth: 300px;
 }
 
 /* GAPS */

@@ -1,9 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import navbarReducer from "../features/navbar/navbarSlice";
+// import navbarReducer from "../features/navbar/navbarSlice";
+import cartReducer from "../features/cart/cartSlice";
 
 export const store = configureStore({
   reducer: {
-    navbar: navbarReducer,
+    cart: cartReducer,
   },
 });
 

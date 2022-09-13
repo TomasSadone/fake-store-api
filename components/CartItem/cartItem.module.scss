@@ -1,0 +1,31 @@
+@use "../../styles/utils.module.scss";
+.itemContainer {
+  margin-bottom: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.counter {
+  text-align: center;
+  font-size: 1.5rem;
+  button {
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    line-height: 0;
+    color: utils.$color-dark;
+    border: 0;
+    border-radius: 500px;
+    background-color: utils.$color-light;
+  }
+}

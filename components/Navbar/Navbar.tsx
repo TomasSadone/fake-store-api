@@ -74,15 +74,15 @@ const Navbar: React.FC<Props> = ({ categories }) => {
             ))}
           </ul>
         </nav>
-        <div ref={cartButton}>
-          <Image
-            onClick={() => dispatch(toggleOverlay(!openOverlay))}
-            src={cart}
-            alt="Shopping Cart"
-            height={28}
-            width={28}
-          />
-        </div>
+        {/* <div ref={cartButton}> */}
+        <Image
+          onClick={() => dispatch(toggleOverlay(!openOverlay))}
+          src={cart}
+          alt="Shopping Cart"
+          height={28}
+          width={28}
+        />
+        {/* </div> */}
         <Cart ref={cartElement} />
       </div>
     </header>

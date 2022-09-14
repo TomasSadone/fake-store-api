@@ -2,7 +2,6 @@ import type { NextPage, GetStaticProps } from "next";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
 import CategoryCard from "../components/Card/Card";
-import { setCategories } from "../lib/features/navbar/navbarSlice";
 import Utils from "../styles/utils.module.scss";
 
 type Props = {

@@ -50,7 +50,7 @@ const Cart = forwardRef<HTMLDivElement>((props: any, ref) => {
           ref={ref}
           className={`${CartStyle.cart}  ${openOverlay && CartStyle.open} `}
         >
-          {products.map((product) => {
+          {products?.map((product) => {
             const { id, quantity, title, price, image } = product;
             return (
               <CartItem key={id} product={product} add={add} remove={remove} />

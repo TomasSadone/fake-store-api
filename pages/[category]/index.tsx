@@ -66,7 +66,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const resp = await fetch("https://fakestoreapi.com/products/categories");
   const categories = await resp.json();
   return {
-    paths: categories.map((category: string) => ({
+    paths: categories?.map((category: string) => ({
       params: { category: category },
     })),
     fallback: false,

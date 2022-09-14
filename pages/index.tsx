@@ -13,7 +13,7 @@ const Home: NextPage<Props> = ({ categories }) => {
     <main className={`${Utils.container}`}>
       <h1 className={`${Utils.fontSizeXxl} ${Utils.fw700}`}>Categories:</h1>
       <div className={`${Utils.gridAutoColumns} ${Utils.gap1} ${Utils.mt25}`}>
-        {categories.map((category) => {
+        {categories?.map((category) => {
           return (
             <CategoryCard
               type="category"

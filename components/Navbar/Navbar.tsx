@@ -61,7 +61,7 @@ const Navbar: React.FC<Props> = ({ categories }) => {
               open && NavbarStyle.open
             }`}
           >
-            {categories.map((category: string) => (
+            {categories?.map((category: string) => (
               <li key={category}>
                 <Link href={`/${category}`}>
                   <a
